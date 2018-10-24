@@ -62,7 +62,21 @@ Library.lendBook = (info) => {
         });
     });
 };
-  
+
+Library.retBook = (info) => {
+    return new Promise((resolve, reject) => {
+        models.sequelize.query(`update libraries set student_id = null, ret_date = null where book_no = ${info.BookNo}`)
+        .spread((stob) => {
+            console.log(stob);
+            resolve(stob);
+        })
+        .catch((err) => {
+            console.log(err);
+            reject(err);
+        });
+    });
+};
+
 Library.updateLibrary = (info, data) => new Promise((
     resolve,
     reject,
