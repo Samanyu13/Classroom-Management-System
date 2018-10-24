@@ -10,5 +10,6 @@ router.get('/', function(req, res, next) {
 router.use('/student',require('./student.js'));
 router.use('/volunteer',require('./volunteer.js'));
 router.use('/library/add_book', require('./library/add_book.js'));
+router.use('/library/lend_book', require('./library/lend_book.js'));
 
 module.exports = router;
