@@ -4,10 +4,10 @@ const models = require('../models');
 
 const Library = {};
 
-Library.addLibrary = (info) => {
+Library.addBook = (info) => {
     console.log(info);
     return new Promise((resolve, reject) => {
-        models.sequelize.query(`insert into libraries (book_no, book_author, book_name, student_id, ret_date, createdAt, updatedAt) values (${info.BookNo}, ${JSON.stringify(info.BookAuthor)}, ${JSON.stringify(info.BookName)}, NULL,${JSON.stringify(info.RetDate)}, NOW(), NOW() )`)
+        models.sequelize.query(`insert into libraries (book_no, book_author, book_name, createdAt, updatedAt) values (${info.BookNo}, ${JSON.stringify(info.BookAuthor)}, ${JSON.stringify(info.BookName)}, NOW(), NOW() )`)
         .spread((stob) => {
             console.log(stob);
             resolve(stob);
