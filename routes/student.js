@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     })
     .catch((err) => {
       res.json({
-        status: 'error',
+        status: 'error poda',
         error: err,
       });
     });
