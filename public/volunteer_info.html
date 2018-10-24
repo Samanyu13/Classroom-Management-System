@@ -6,18 +6,22 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <script>
+        var redirect = function(){
+            document.location.href="index.html"
+        }
+    </script>
 </head>
 <body>
 
         <div class="login-page">
   <div class="form">
-    <form class="login-form" method="POST" action="http://localhost:3000/volunteer">
+    <form class="login-form" method="POST" action="http://localhost:3000/volunteer" onSubmit="alert('Thank you for your feedback.');">
       <input type="text" placeholder="Name" name="Name"/>
       <input type="text" placeholder="Contact" name="Contact"/>
       <input type="text" placeholder="Occupation" name="Occupation"/>
 
-      <input type="submit" value="Submit"/>
+      <input type="submit" value="Submit" onclick="redirect()"/>
       <!-- <button>login</button> -->
     </form>
   </div>
