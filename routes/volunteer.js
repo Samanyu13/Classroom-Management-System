@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
 
   info.Name = req.body.Name;
   info.Contact = req.body.Contact;
-
+  info.Occupation = req.body.Occupation;
 
   methods.Volunteer.addVolunteer(info)
     .then((model) => {
@@ -47,9 +47,11 @@ router.put('/:id', (req, res) => {
   info.id = req.params.id; // key values for finding row
 
   if (Object.prototype.hasOwnProperty.call(req.body, 'Name') && 
-      Object.prototype.hasOwnProperty.call(req.body, 'Contact')) {
+      Object.prototype.hasOwnProperty.call(req.body, 'Contact') && 
+      Object.prototype.hasOwnProperty.call(req.body, 'Occupation')) {
         data.name = req.body.Name;
         data.contact = req.body.Contact;
+        data.occupation = req.body.Occupation;
   }
 
   methods.Volunteer.updateVolunteer(info, data)

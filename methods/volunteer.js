@@ -7,7 +7,7 @@ const Volunteer = {};
 Volunteer.addVolunteer = (info) => {
     console.log(info);
     return new Promise((resolve, reject) => {
-        models.sequelize.query(`insert into volunteers (name, contact, createdAt, updatedAt) values (${JSON.stringify(info.Name)}, ${info.Contact}, NOW(), NOW() )`)
+        models.sequelize.query(`insert into volunteers (name, contact, occupation, createdAt, updatedAt) values (${JSON.stringify(info.Name)}, ${info.Contact}, ${JSON.stringify(info.Occupation)}, NOW(), NOW() )`)
         .spread((volob) => {
             console.log(volob);
             resolve(volob);
