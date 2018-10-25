@@ -5,9 +5,9 @@ const methods = require('../../methods');
 
 router.post('/', (req, res) => {
   const info = {};
-  info.BookNo = req.body.BookNo;
-  info.BookName = req.body.BookName;
-  info.BookAuthor = req.body.BookAuthor;
+  info.BookNo = req.body.data.BookNo;
+  info.BookName = req.body.data.BookName;
+  info.BookAuthor = req.body.data.BookAuthor;
   methods.Library.addBook(info)
     .then((model) => {
       res.json(model);

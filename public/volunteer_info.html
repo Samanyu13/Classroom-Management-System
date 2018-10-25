@@ -6,24 +6,18 @@
     <title>Add Volunteer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./stylesheets/style.css" >
-    <script>
-        var redirect = function(){
-            document.location.href="index.html"
-        }
-    </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+     <script src="./javascripts/functions.js"></script>
 </head>
 <body>
 
-        <div class="login-page">
-  <div class="form">
-    <form class="login-form" method="POST" action="http://localhost:3000/volunteer">
-      <input type="text" placeholder="Name" name="Name"/>
-      <input type="text" placeholder="Contact" name="Contact"/>
-      <input type="text" placeholder="Occupation" name="Occupation"/>
-
-      <input type="submit" value="Submit"/>
-    </form>
-  </div>
+<div class="login-page">
+    <div class="form">
+      <input type="text" placeholder="Name" id="name"/>
+      <input type="text" placeholder="Contact" id="contactno"/>
+      <input type="text" placeholder="Occupation" id="occup"/>
+      <button onclick="addVol()">Submit</button>
+    </div>
 </div>
 
 </body>

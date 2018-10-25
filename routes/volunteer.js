@@ -21,10 +21,9 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const info = {};
-
-  info.Name = req.body.Name;
-  info.Contact = req.body.Contact;
-  info.Occupation = req.body.Occupation;
+  info.Name = req.body.data.Name;
+  info.Contact = req.body.data.Contact;
+  info.Occupation = req.body.data.Occupation;
 
   methods.Volunteer.addVolunteer(info)
     .then((model) => {

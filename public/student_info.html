@@ -6,21 +6,19 @@
     <title>Add Student</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="./stylesheets/style.css" >
-    <script src="main.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+     <script src="./javascripts/functions.js"></script>
 </head>
 <body>
 
-        <div class="login-page">
-  <div class="form">
-    <form class="login-form" method="POST" action="http://localhost:3000/student" >
-      <input type="text" placeholder="Name" name="Name"/>
-      <input type="text" placeholder="Class" name="Class"/>
-      <input type="text" placeholder="Parent Name" name="PName"/>
-      <input type="text" placeholder="Address" name="Address"/>
-      <input type="text" placeholder="Contact" name="Contact"/>
-      <input type="submit" value="Submit"/>
-      <!-- <button>login</button> -->
-    </form>
+<div class="login-page">
+    <div class="form">
+      <input type="text" placeholder="Name" id="name"/>
+      <input type="text" placeholder="Class" id="class"/>
+      <input type="text" placeholder="Parent Name" id="pname"/>
+      <input type="text" placeholder="Address" id="address"/>
+      <input type="text" placeholder="Contact" id="contact"/>
+      <button onclick="addStudent()">Submit</button>
   </div>
 </div>
 

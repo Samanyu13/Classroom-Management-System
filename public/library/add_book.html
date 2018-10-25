@@ -6,16 +6,16 @@
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" >
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="./javascripts/functions.js"></script>
 </head>
 <body>
   <div class="login-page">
     <div class="form">
-      <form class="login-form" method="POST" action="http://localhost:3000/library/add_book">
-        <input type="text" placeholder="Book No" name="BookNo"/>
-        <input type="text" placeholder="Name" name="BookName"/>
-        <input type="text" placeholder="Author" name="BookAuthor"/>
-        <input type="submit" value="Submit"/>
-      </form>
+        <input type="text" placeholder="Book No" id="bookno"/>
+        <input type="text" placeholder="Name" id="bookname"/>
+        <input type="text" placeholder="Author" id="bookauthor"/>
+        <button onclick="addBook()">Submit</button>
     </div>
   </div>
 </body>

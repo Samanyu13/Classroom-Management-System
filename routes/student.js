@@ -13,20 +13,19 @@ router.get('/', (req, res) => {
     })
     .catch((err) => {
       res.json({
-        status: 'error poda',
+        status: 'error',
         error: err,
       });
     });
 });
 
 router.post('/', (req, res) => {
-  const info = {};
-
-  info.Name = req.body.Name;
-  info.Class = req.body.Class;
-  info.PName = req.body.PName;
-  info.Address = req.body.Address;
-  info.Contact = req.body.Contact;
+  var info = {};
+  info.Name = req.body.data.Name;
+  info.Class = req.body.data.Class;
+  info.PName = req.body.data.PName;
+  info.Address = req.body.data.Address;
+  info.Contact = req.body.data.Contact;
 
   methods.Student.addStudent(info)
     .then((model) => {

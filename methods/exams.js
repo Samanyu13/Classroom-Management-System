@@ -7,7 +7,7 @@ const Exams = {};
 Exams.addExam = (info) => {
     console.log(info);
     return new Promise((resolve, reject) => {
-        models.sequelize.query(`insert into exams (sub_id, date, student_id, createdAt, updatedAt) values (${info.SubID}, ${JSON.stringify(new Date(info.Date))}, ${info.StuID}, NOW(), NOW() )`)
+        models.sequelize.query(`insert into exams (sub_id, date, student_id, createdAt, updatedAt) values (${info.SubID}, ${info.Date}, ${info.StuID}, NOW(), NOW() )`)
         .spread((exob) => {
             console.log(exob);
             resolve(exob);
