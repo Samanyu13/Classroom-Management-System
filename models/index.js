@@ -46,7 +46,7 @@ db.exams = require('./exams')(sequelize, Sequelize);
 db.classes_handled = require('./classes_handled')(sequelize, Sequelize);
 db.library = require('./library')(sequelize, Sequelize);
 db.student = require('./student')(sequelize, Sequelize);
-//db.volunteer = require('./volunteer')(sequelize, Sequelize);
+db.volunteer = require('./volunteer')(sequelize, Sequelize);
 db.subject = require('./subject')(sequelize, Sequelize);
 db.result = require('./result')(sequelize, Sequelize);
 

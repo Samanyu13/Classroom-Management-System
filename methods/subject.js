@@ -4,7 +4,7 @@ const models = require('../models');
 
 const Subject = {};
 
-Subject.addExam = (info) => {
+Subject.addSubject = (info) => {
     console.log(info);
     return new Promise((resolve, reject) => {
         models.sequelize.query(`insert into subjects (name, createdAt, updatedAt) values (${JSON.stringify(info.Name)}, NOW(), NOW() )`)

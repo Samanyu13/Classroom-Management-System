@@ -7,7 +7,7 @@ const Exams = {};
 Exams.addExam = (info) => {
     console.log(info);
     return new Promise((resolve, reject) => {
-        models.sequelize.query(`insert into exams (name, address, contact, createdAt, updatedAt) values (${JSON.stringify(info.Name)}, ${JSON.stringify(info.Address)}, ${info.Contact}, NOW(), NOW() )`)
+        models.sequelize.query(`insert into exams (sub_id, date, student_id, createdAt, updatedAt) values (${info.SubID}, ${JSON.stringify(new Date(info.Date))}, ${info.StuID}, NOW(), NOW() )`)
         .spread((exob) => {
             console.log(exob);
             resolve(exob);
@@ -20,7 +20,7 @@ Exams.addExam = (info) => {
 };
   
 Exams.getAllExams = () => new Promise((resolve, reject) => {
-    models.exams.sequelize.query(`select * from exams`)
+    models.sequelize.query(`select * from exams`)
     .spread((exob) => {
         resolve(exob);
     })
@@ -32,7 +32,7 @@ Exams.getAllExams = () => new Promise((resolve, reject) => {
 Exams.findById = (id) => {
     console.log('finding by id');
     return new Promise((resolve, reject) => {
-        models.sequelize.query(`select * from parent where id=${parentId}`)
+        models.sequelize.query(`select * from exams where id=${Id}`)
         .spread((parobj) => {
             if (parobj) {
                 resolve(parobj);
@@ -49,7 +49,7 @@ Exams.findById = (id) => {
         
 };
   
-Exams.updateParent = (info, data) => new Promise((
+Exams.updateExam = (info, data) => new Promise((
     resolve,
     reject,
     ) => {
@@ -70,7 +70,7 @@ Exams.updateParent = (info, data) => new Promise((
         });
 });
   
-Exams.deleteParent = info => new Promise((resolve, reject) => {
+Exams.deleteExam = info => new Promise((resolve, reject) => {
     models.exams.destroy({
         where: {
             id: info.id,
