@@ -8,11 +8,15 @@
   <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" >
 </head>
 <body>
+    <div class="home">
+      <a href="../index.html">&lt; Home</a>
+    </div>
   <div class="login-page">
       <div class="form">
-        <form class="login-form" method="POST" action="#" >
+        <form class="login-form" method="POST" action="http://localhost:3000/result" >
           <input type="text" placeholder="Exam ID" name="exam_id"/>
-          <input type="date" placeholder="Marks" name="marks"/>
+          <input type="number" placeholder="Marks" name="marks"/>
+          <input type="text" placeholder="Remarks" name="remarks"/>
           <input type="submit" value="Submit"/>
         </form>
       </div>
