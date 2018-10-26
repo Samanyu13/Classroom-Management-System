@@ -6,14 +6,15 @@
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" >
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="../javascripts/functions.js"></script>
 </head>
 <body>
   <div class="login-page">
     <div class="form">
-      <form class="login-form" method="POST" action="http://localhost:3000/library/ret_book">
-        <input type="text" placeholder="Book No" name="BookNo"/>
-        <input type="text" placeholder="Student ID" name="student_id"/>
-        <input type="submit" value="Submit"/>
+        <input type="text" placeholder="Book No" id="bookno"/>
+        <input type="text" placeholder="Student ID" id="student_id"/>
+        <button onclick="retBook()">Submit</button>
       </form>
     </div>
   </div>
