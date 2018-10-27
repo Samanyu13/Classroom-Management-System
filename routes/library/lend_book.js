@@ -19,4 +19,20 @@ router.post('/', (req, res) => {
     });
 });
 
+router.get('/', (req, res) => {
+  methods.Library.getLendBooks()
+    .then((model) => {
+      res.status(200).json({
+        status: 'success',
+        classes: model,
+      });
+    })
+    .catch((err) => {
+      res.json({
+        status: 'error',
+        error: err,
+      });
+    });
+});
+
 module.exports = router;

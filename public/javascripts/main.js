@@ -65,3 +65,20 @@ function formatDate(date) {
     console.log(day+" "+monthIndex+" "+year)
     return day + ' ' + monthNames[monthIndex] + ' ' + year;
   }
+
+  function dropDown(url,field) {
+    axios.get(url,{
+        withCredentials:true
+    }).then(function(result){
+        var text='<option value="" disabled selected>'+field+'</option>';
+        var data = result.data.classes;
+        for(var i = 0;i<data.length;i++){
+            text+="<option>"+data[i].book_no+"</option>";
+        }
+        var resultElement = document.getElementById('bookno')
+        resultElement.innerHTML = text
+    }).catch(function(err){
+        console.log(err)
+    });
+  }
+  

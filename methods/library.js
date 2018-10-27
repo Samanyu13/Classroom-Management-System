@@ -7,7 +7,7 @@ const Library = {};
 Library.addBook = (info) => {
     console.log(info);
     return new Promise((resolve, reject) => {
-        models.sequelize.query(`insert into libraries (book_no, book_author, book_name, createdAt, updatedAt) values (${info.BookNo}, ${JSON.stringify(info.BookAuthor)}, ${JSON.stringify(info.BookName)}, NOW(), NOW() )`)
+        models.sequelize.query(`insert into libraries (book_no, book_author, book_name, student_id, createdAt, updatedAt) values (${info.BookNo}, ${JSON.stringify(info.BookAuthor)}, ${JSON.stringify(info.BookName)}, 0, NOW(), NOW() )`)
         .spread((stob) => {
             console.log(stob);
             resolve(stob);
@@ -21,6 +21,26 @@ Library.addBook = (info) => {
   
 Library.getAllLibrary = () => new Promise((resolve, reject) => {
     models.sequelize.query(`select * from libraries`)
+    .spread((stob) => {
+        resolve(stob);
+    })
+    .catch((err) => {
+        reject(err);
+    });
+});
+
+Library.getReturnBooks = () => new Promise((resolve, reject) => {
+    models.sequelize.query(`select * from libraries where student_id!="null"`)
+    .spread((stob) => {
+        resolve(stob);
+    })
+    .catch((err) => {
+        reject(err);
+    });
+});
+
+Library.getLendBooks = () => new Promise((resolve, reject) => {
+    models.sequelize.query(`select * from libraries where student_id="null"`)
     .spread((stob) => {
         resolve(stob);
     })
@@ -65,7 +85,7 @@ Library.lendBook = (info) => {
 
 Library.retBook = (info) => {
     return new Promise((resolve, reject) => {
-        models.sequelize.query(`update libraries set student_id = null, ret_date = null where book_no = ${info.BookNo}`)
+        models.sequelize.query(`update libraries set student_id = 0, ret_date = null where book_no = ${info.BookNo}`)
         .spread((stob) => {
             console.log(stob);
             resolve(stob);
