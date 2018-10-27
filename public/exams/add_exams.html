@@ -6,6 +6,13 @@
     <title>Add Exams</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" >
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="../javascripts/main.js"></script>
+    <script src="../javascripts/functions.js"></script>
 </head>
 <body>
         <div class="home">
@@ -13,12 +20,10 @@
         </div>
     <div class="login-page">
             <div class="form">
-                <form class="login-form" method="POST" action="http://localhost:3000/exams" >
-                  <input type="text" placeholder="Subject ID" name="SubID"/>
-                  <input type="date" placeholder="Date" name="Date"/>
-                  <input type="text" placeholder="Student ID" name="StuID"/>
-                  <input type="submit" value="Submit"/>
-                </form>
+                  <input type="text" placeholder="Subject ID" id="SubID"/>
+                  <input type="date" placeholder="Date" id="Datee"/>
+                  <input type="text" placeholder="Student ID" id="StuID"/>
+                  <button onclick="addExams()">Submit</button>
             </div>
     </div>
 </body>

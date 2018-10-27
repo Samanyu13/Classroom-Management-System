@@ -6,13 +6,29 @@ const methods = require('../methods');
 router.post('/', (req, res) => {
   const info = {};
 
-  info.marks = req.body.marks;
-  info.exam_id = req.body.exam_id;
-  info.remarks = req.body.remarks;
+  info.Marks = req.body.data.Marks;
+  info.ExamID = req.body.data.ExamID;
+  info.Remarks = req.body.data.Remarks;
 
-  methods.Exams.addMarks(info)
+  methods.Result.addResult(info)
     .then((model) => {
       res.json(model);
+    })
+    .catch((err) => {
+      res.json({
+        status: 'error',
+        error: err,
+      });
+    });
+});
+
+router.get('/', (req, res) => {
+  methods.Result.getAllResults()
+    .then((model) => {
+      res.status(200).json({
+        status: 'success',
+        classes: model,
+      });
     })
     .catch((err) => {
       res.json({

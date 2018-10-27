@@ -82,3 +82,37 @@ function retBook(){
         console.log(err)
     });
 }
+
+function addExams(){
+    var SubID = document.getElementById('SubID').value;
+    var Datee = document.getElementById('Datee').value;
+    var StuID = document.getElementById('StuID').value;
+    var tosend = {};
+    tosend.SubID = SubID;
+    tosend.Datee = Datee;
+    tosend.StuID = StuID;
+    axios.post('http://localhost:3000/exams',{data:tosend})
+    .then(function(result){
+        window.location.href = "../index.html"
+    })
+    .catch(function(err){
+        console.log(err)
+    });
+}
+
+function addResult(){
+    var Marks = document.getElementById('Marks').value;
+    var ExamID = document.getElementById('ExamID').value;
+    var Remarks = document.getElementById('Remarks').value;
+    var tosend = {};
+    tosend.ExamID = ExamID;
+    tosend.Marks = Marks;
+    tosend.Remarks = Remarks;
+    axios.post('http://localhost:3000/result',{data:tosend})
+    .then(function(result){
+        window.location.href = "../index.html"
+    })
+    .catch(function(err){
+        console.log(err)
+    });
+}
