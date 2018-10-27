@@ -7,6 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../stylesheets/style.css" >
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
   <script src="../javascripts/main.js"></script>
   <script src="../javascripts/functions.js"></script>
 </head>
@@ -16,14 +20,14 @@
     </div>
   <div class="login-page">
     <div class="form">
-        <!-- <input type="text" placeholder="Book No" id="bookno"/> -->
-        <select id="bookno" >Book No</select>
+        <select id="bookno">Book No</select>
         <input type="text" placeholder="Student ID" id="student_id"/>
         <button onclick="lendBook()">Submit</button>
     </div>
   </div>
+
   <script>
-    dropDown('http://localhost:3000/library/lend_book',"Book No");
+    dropDown('http://localhost:3000/library/lend_book',"Book No",'book_no','bookno');
   </script>
 </body>
 </html>
