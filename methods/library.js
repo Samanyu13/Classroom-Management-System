@@ -85,7 +85,7 @@ Library.lendBook = (info) => {
 
 Library.retBook = (info) => {
     return new Promise((resolve, reject) => {
-        models.sequelize.query(`update libraries set student_id = 0, ret_date = null where book_no = ${info.BookNo}`)
+        models.sequelize.query(`update libraries set student_id = 0, ret_date = null where book_no = ${info.bookno}`)
         .spread((stob) => {
             console.log(stob);
             resolve(stob);

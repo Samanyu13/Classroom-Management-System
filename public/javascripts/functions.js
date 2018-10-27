@@ -70,10 +70,10 @@ function lendBook(){
 
 function retBook(){
     var bookno = document.getElementById('bookno').value;
-    var student_id = document.getElementById('student_id').value;
+    // var studentid = document.getElementById('studentid').value;
     var tosend = {};
-    tosend.BookNo = bookno;
-    tosend.student_id = student_id;
+    tosend.bookno = bookno;
+    // tosend.studentid = studentid;
     axios.post('http://localhost:3000/library/ret_book',{data:tosend})
     .then(function(result){
         window.location.href = "../index.html";
