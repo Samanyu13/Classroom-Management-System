@@ -45,24 +45,24 @@ router.put('/:id', (req, res) => {
 
   info.id = req.params.id; // key values for finding row
 
-  if (Object.prototype.hasOwnProperty.call(req.body, 'Name') &&  
-      Object.prototype.hasOwnProperty.call(req.body, 'Class') &&
-      Object.prototype.hasOwnProperty.call(req.body, 'PName') &&  
-      Object.prototype.hasOwnProperty.call(req.body, 'Address') &&
-      Object.prototype.hasOwnProperty.call(req.body, 'Contact')) {
-        data.name = req.body.Name;
-        data.class = req.body.Class;
-        data.parent_name = req.body.PName;
-        data.address = req.body.Address;
-        data.contact = req.body.Contact;
+  if (Object.prototype.hasOwnProperty.call(req.body, 'Name') &&
+    Object.prototype.hasOwnProperty.call(req.body, 'Class') &&
+    Object.prototype.hasOwnProperty.call(req.body, 'PName') &&
+    Object.prototype.hasOwnProperty.call(req.body, 'Address') &&
+    Object.prototype.hasOwnProperty.call(req.body, 'Contact')) {
+    data.name = req.body.Name;
+    data.class = req.body.Class;
+    data.parent_name = req.body.PName;
+    data.address = req.body.Address;
+    data.contact = req.body.Contact;
   }
 
   methods.Student.updateStudent(info, data)
     .then((model) => {
-        res.status(200).json({
-          status: 'Updated Student',
-          state: model[0],
-        });
+      res.status(200).json({
+        status: 'Updated Student',
+        state: model[0],
+      });
     })
     .catch((err) => {
       res.send({
