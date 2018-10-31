@@ -7,6 +7,7 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "bcrypt": "^3.0.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "ejs": "^2.6.1",
@@ -16,6 +17,7 @@
     "morgan": "~1.9.0",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.1",
+    "passport": "^0.4.0",
     "sequelize": "^4.39.0",
     "stylus": "0.54.5"
   }

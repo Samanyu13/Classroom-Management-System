@@ -49,5 +49,7 @@ db.student = require('./student')(sequelize, Sequelize);
 db.volunteer = require('./volunteer')(sequelize, Sequelize);
 db.subject = require('./subject')(sequelize, Sequelize);
 db.result = require('./result')(sequelize, Sequelize);
+db.admin_login = require('./admin_login')(sequelize, Sequelize);
+db.student_login = require('./student_login')(sequelize, Sequelize);
 
 module.exports = db;

@@ -16,8 +16,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.set('view engine','ejs');
 app.use('/', routes);
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 
 var port = 3000;
