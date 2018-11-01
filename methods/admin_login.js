@@ -18,7 +18,7 @@ AdminLogin.addAdmin = (info) => {
     });
 };
 
-AdminLogin.checkIfAdmin = (info) => {
+AdminLogin.checkForAdmin = (info) => {
     return new Promise((resolve,reject) => {
         models.admin_login.findOne( {
             where  :    {
@@ -33,7 +33,8 @@ AdminLogin.checkIfAdmin = (info) => {
             else
             {               
                 if(bcrypt.compareSync(info.password, theuser.password)) {
-                    console.log('Successful');                   
+                    console.log('Successful');   
+                    resolve(theuser);                
                 } 
                 else {
                     console.log('Invalid Password..!');

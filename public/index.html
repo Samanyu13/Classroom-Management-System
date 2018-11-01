@@ -78,6 +78,12 @@
     </nav>
   </div>
 
+  <div class="navbar2 bg-transparent">
+    <a href="login/admin_login.html" class="active">Admin Login</a>
+    <a href="login/student_login.html" class="active">User Login</a>    
+  </div>
+  
+
 </body>
 
 <style>
@@ -107,7 +113,32 @@
     padding-left: 10px;
     text-decoration: none;
   }
-  nav ul li:last-child { float: left; }
+  .navbar2 {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.navbar2 a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.navbar2 a:hover {
+  background: #f1f1f1;
+  color: black;
+}
+
+.navbar2 a.active {
+  color: black;
+}
 
 </style>
 

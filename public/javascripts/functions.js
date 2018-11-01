@@ -116,3 +116,33 @@ function addResult(){
         console.log(err)
     });
 }
+
+function adminLogin(){
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var tosend = {};
+    tosend.username = username;
+    tosend.password = password;
+    axios.post('http://localhost:3000/admin_login/login',{data:tosend})
+    .then(function(result){
+        window.location.href = "../index.html"
+    })
+    .catch(function(err){
+        console.log(err)
+    });
+}
+
+function userLogin(){
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var tosend = {};
+    tosend.username = username;
+    tosend.password = password;
+    axios.post('http://localhost:3000/student_login/login',{data:tosend})
+    .then(function(result){
+        window.location.href = "../index.html"
+    })
+    .catch(function(err){
+        console.log(err)
+    });
+}

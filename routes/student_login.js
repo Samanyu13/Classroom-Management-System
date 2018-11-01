@@ -25,11 +25,10 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res) => {
   const info = {};
 
-//   info.SubID = req.body.data.SubID;
-//   info.Datee = req.body.data.Datee;
-//   info.StuID = req.body.data.StuID;
+  info.password = req.body.data.password;
+  info.username = req.body.data.username;
 
-  methods.StudentLogin.addUser(info)
+  methods.StudentLogin.checkForUser(info)
     .then((model) => {
       res.json(model);
     })

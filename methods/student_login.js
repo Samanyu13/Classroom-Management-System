@@ -18,7 +18,7 @@ StudentLogin.addUser = (info) => {
     });
 };
 
-StudentLogin.checkIfUser = (info) => {
+StudentLogin.checkForUser = (info) => {
     return new Promise((resolve,reject) => {
         models.student_login.findOne( {
             where  :    {
@@ -34,7 +34,7 @@ StudentLogin.checkIfUser = (info) => {
             {               
                 if(bcrypt.compareSync(info.password, theuser.password)) {
                     console.log('Successful');
-                    resolve(theuser)                   
+                    resolve(theuser);                   
                 } 
                 else {
                     console.log('Invalid Password..!');
