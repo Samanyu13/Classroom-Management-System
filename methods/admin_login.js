@@ -6,7 +6,7 @@ const AdminLogin = {};
 AdminLogin.addAdmin = (info) => {
     return new Promise((resolve, reject) => {
         let hash = bcrypt.hashSync(info.password, 10);
-        models.sequelize.query(`insert into admin_login (username, password, vol_id, createdAt, updatedAt) values (${JSON.stringify(info.username)}, ${hash}, ${info.vol_id}, NOW(), NOW() )`)
+        models.sequelize.query(`insert into admin_logins (username, password, vol_id, createdAt, updatedAt) values (${JSON.stringify(info.username)}, ${stringify(hash)}, ${info.vol_id}, NOW(), NOW() )`)
         .spread((exob) => {
             console.log(exob);
             resolve(exob);

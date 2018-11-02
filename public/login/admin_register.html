@@ -18,14 +18,15 @@
       </div>
       <div class="login-page">
         <div class="form">
-          <input type="text" placeholder="Username" id="username" />
-          <input type="password" placeholder="Password" id="password" />
-          <button onclick="adminLogin()">Submit</button>
-          <p>
-            <a href="admin_register.html">New registration? Click here</a>
-          </p>
+          <input type="text" placeholder="Your username" id="username" />
+          <input type="password" placeholder="Your password" id="password" />
+          <select id="vol_id">Volunteer ID</select>
+          <button onclick="adminRegister()">Submit</button>
         </div>
       </div>
 
+      <script>
+        dropDown('http://localhost:3000/volunteer', "Volunteer ID", "id", "vol_id");
+      </script>
 </body>
 </html>

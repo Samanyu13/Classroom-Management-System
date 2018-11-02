@@ -146,3 +146,20 @@ function userLogin(){
         console.log(err)
     });
 }
+
+function adminRegister(){
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var vol_id = document.getElementById('vol_id').value;
+    var tosend = {};
+    tosend.username = username;
+    tosend.password = password;
+    tosend.vol_id = vol_id;
+    axios.post('http://localhost:3000/admin_login/register',{data:tosend})
+    .then(function(result){
+        window.location.href = "../index.html"
+    })
+    .catch(function(err){
+        console.log(err)
+    });
+}

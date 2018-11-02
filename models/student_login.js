@@ -12,12 +12,12 @@ module.exports = function (sequelize, DataTypes) {
           unique: 'compositeIndex',
         },
         username: {
-          type: DataTypes.STRING(),
+          type: DataTypes.STRING(40),
           allowNull: false,
           unique: 'compositeIndex',
         },
         password: {
-          type: DataTypes.STRING(),
+          type: DataTypes.STRING(100),
           allowNull: false,
           unique: 'compositeIndex',
         },

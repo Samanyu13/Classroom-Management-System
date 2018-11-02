@@ -6,7 +6,7 @@ const StudentLogin = {};
 StudentLogin.addUser = (info) => {
     return new Promise((resolve, reject) => {
         let hash = bcrypt.hashSync(info.password, 10);
-        models.sequelize.query(`insert into student_login (username, password, student_id, createdAt, updatedAt) values (${JSON.stringify(info.username)}, ${hash}, ${info.vol_id}, NOW(), NOW() )`)
+        models.sequelize.query(`insert into student_logins (username, password, student_id, createdAt, updatedAt) values (${JSON.stringify(info.username)}, ${hash}, ${info.vol_id}, NOW(), NOW() )`)
         .spread((exob) => {
             console.log(exob);
             resolve(exob);

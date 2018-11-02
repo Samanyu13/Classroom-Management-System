@@ -6,10 +6,9 @@ const methods = require('../methods');
 router.post('/register', (req, res) => {
   const info = {};
 
-//   info.SubID = req.body.data.SubID;
-//   info.Datee = req.body.data.Datee;
-//   info.StuID = req.body.data.StuID;
-
+  info.username = req.body.data.username;
+  info.password = req.body.data.password;
+  info.vol_id = req.body.data.vol_id;
   methods.AdminLogin.addAdmin(info)
     .then((model) => {
       res.json(model);
