@@ -16,9 +16,24 @@
     <a href="../index.html">&lt; Home</a>
   </div>
   <div class="bcenter">
-    <button onclick="getLibrary()">Click to View Details</button>
+    <button onclick="getAvailableLibrary()">Click to View Available Books</button>
+    <div id="avail"></div>
   </div>
-  <div id="data"></div>
+  <div class="bcenter">
+    <button onclick="getLendedLibrary()">Click to View Lended Books</button>
+    <div id="lend"></div>
+  </div>
+  <style>
+  .avail {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .lend {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  </style>
 </body>
 
 </html>

@@ -49,26 +49,6 @@ Library.getLendBooks = () => new Promise((resolve, reject) => {
     });
 });
 
-Library.findById = (id) => {
-    console.log('finding by id');
-    return new Promise((resolve, reject) => {
-        models.sequelize.query(`select * from libraries where id=${Id}`)
-        .spread((stob) => {
-            if (stob) {
-                resolve(stob);
-            } 
-            else {
-                reject(new Error('Not a valid class id'));
-            }
-        })
-        .catch((err) => {
-            console.log(err);
-            reject(err);
-        });
-    });
-        
-};
-
 Library.lendBook = (info) => {
     return new Promise((resolve, reject) => {
         models.sequelize.query(`update libraries set student_id = ${info.student_id}, ret_date = (curdate() + interval 14 day) where book_no = ${info.BookNo}`)

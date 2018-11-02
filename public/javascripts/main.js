@@ -32,8 +32,8 @@ function getVol(){
     });
 }
 
-function getLibrary(){
-    axios.get("http://localhost:3000/library/show_library",{
+function getLendedLibrary(){
+    axios.get("http://localhost:3000/library/show_library/lended",{
         withCredentials:true
     }).then(function(result){
         var data = result.data.classes
@@ -41,8 +41,25 @@ function getLibrary(){
         for(var i = 0;i<data.length;i++){
             text+="<tr><td>"+data[i].book_no+"</td><td>"+data[i].book_author+"</td><td>"+data[i].book_name+"</td><td>"+data[i].student_id+"</td><td>"+formatDate(data[i].ret_date)+"</td></tr>";
         }
-        text+="<table>"
-        var resultElement = document.getElementById('data')
+        text+="</table>"
+        var resultElement = document.getElementById('lend')
+        resultElement.innerHTML = text
+    }).catch(function(err){
+        console.log(err)
+    });
+}
+
+function getAvailableLibrary(){
+    axios.get("http://localhost:3000/library/show_library/available",{
+        withCredentials:true
+    }).then(function(result){
+        var data = result.data.classes
+        var text = "<table><tr><th>Book No</th><th>Book Author</th><th>Book Name</th></tr>"
+        for(var i = 0;i<data.length;i++){
+            text+="<tr><td>"+data[i].book_no+"</td><td>"+data[i].book_author+"</td><td>"+data[i].book_name+"</td></tr>";
+        }
+        text+="</table>"
+        var resultElement = document.getElementById('avail')
         resultElement.innerHTML = text
     }).catch(function(err){
         console.log(err)
