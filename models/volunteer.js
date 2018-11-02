@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
           unique: 'compositeIndex',
         },
         contact: {
-          type: DataTypes.INTEGER(),
+          type: DataTypes.STRING(15),
           allowNull: false,
           unique: 'compositeIndex',
         },
