@@ -6,9 +6,9 @@ const methods = require('../methods');
 router.post('/', (req, res) => {
   const info = {};
 
-  info.Marks = req.body.data.Marks;
-  info.ExamID = req.body.data.ExamID;
-  info.Remarks = req.body.data.Remarks;
+  info.marks = req.body.data.marks;
+  info.examID = req.body.data.examID;
+  info.remarks = req.body.data.remarks;
 
   methods.Result.addResult(info)
     .then((model) => {

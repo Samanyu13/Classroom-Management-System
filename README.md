@@ -28,7 +28,8 @@
   
 #to do
 to change:
-    subject (landing page)
-    classes
-    add result (exam)
-    view result (exam)
+  subject (landing page)
+  classes
+  add result (exam) not working
+  view result (exam)
+  ids of students and volunteers in view
