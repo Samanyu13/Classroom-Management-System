@@ -7,7 +7,7 @@ const Result = {};
 Result.addResult = (info) => {
   console.log(info);
   return new Promise((resolve, reject) => {
-    models.sequelize.query(`insert into results (exam_id, marks, remarks, createdAt, updatedAt) values (${info.examId}, ${info.marks}, ${JSON.stringify(info.remarks)}, NOW(), NOW() )`)
+    models.sequelize.query(`insert into results (exam_id, marks, remarks, createdAt, updatedAt) values (${info.examID}, ${info.marks}, ${JSON.stringify(info.remarks)}, NOW(), NOW() )`)
       .spread((stob) => {
         console.log(stob);
         resolve(stob);
