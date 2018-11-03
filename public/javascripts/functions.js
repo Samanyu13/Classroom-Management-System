@@ -130,3 +130,16 @@ function addResult() {
       console.log(err)
     });
 }
+
+function addSubject() {
+  var Name = document.getElementById('Name').value;
+  var tosend = {};
+  tosend.Name = Name;
+  axios.post('http://localhost:3000/subject', {
+    data: tosend
+  }).then(function (result) {
+    window.location.href = "index.html"
+  }).catch(function (err) {
+    console.log(err);    
+  });
+}

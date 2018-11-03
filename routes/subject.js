@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const info = {};
 
-  info.Name = req.body.Name;
+  info.Name = req.body.data.Name;
   methods.Subject.addSubject(info)
     .then((model) => {
       res.json(model);

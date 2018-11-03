@@ -28,7 +28,6 @@
   
 #to do
 to change:
-  subject (landing page)
   classes
   view result (exam)
   ids of students and volunteers in view
