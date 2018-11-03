@@ -30,4 +30,3 @@
 to change:
   classes
   view result (exam)
-  ids of students and volunteers in view
