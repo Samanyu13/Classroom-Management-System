@@ -3,9 +3,9 @@ function getData(){
         withCredentials:true
     }).then(function(result){
         var data = result.data.classes
-        var text = "<table><tr><th>Name</th><th>Class</th><th>Parent Name</th><th>Address</th><th>Contact</th></tr>"
+        var text = "<table><tr><th>Student ID</th><th>Name</th><th>Class</th><th>Parent Name</th><th>Address</th><th>Contact</th></tr>"
         for(var i = 0;i<data.length;i++){
-            text+="<tr><td>"+data[i].name+"</td><td>"+data[i].class+"</td><td>"+data[i].parent_name+"</td><td>"+data[i].address+"</td><td>"+data[i].contact+"</td></tr>";
+            text+="<tr><td>"+data[i].id+"</td><td>"+data[i].name+"</td><td>"+data[i].class+"</td><td>"+data[i].parent_name+"</td><td>"+data[i].address+"</td><td>"+data[i].contact+"</td></tr>";
         }
         text+="<table>"
         var resultElement = document.getElementById('data')
@@ -20,9 +20,9 @@ function getVol(){
         withCredentials:true
     }).then(function(result){
         var data = result.data.classes
-        var text = "<table><tr><th>Name</th><th>Contact</th><th>Occupation</th></tr>"
+        var text = "<table><tr><th>Volunteer ID</th><th>Name</th><th>Contact</th><th>Occupation</th></tr>"
         for(var i = 0;i<data.length;i++){
-            text+="<tr><td>"+data[i].name+"</td><td>"+data[i].contact+"</td><td>"+data[i].occupation+"</td></tr>";
+            text+="<tr><td>"+data[i].id+"</td><td>"+data[i].name+"</td><td>"+data[i].contact+"</td><td>"+data[i].occupation+"</td></tr>";
         }
         text+="<table>"
         var resultElement = document.getElementById('data')
