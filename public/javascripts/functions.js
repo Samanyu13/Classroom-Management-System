@@ -140,6 +140,25 @@ function addSubject() {
   }).then(function (result) {
     window.location.href = "index.html"
   }).catch(function (err) {
-    console.log(err);    
+    console.log(err);
   });
+}
+
+function addClass() {
+  var sub_id = document.getElementById('sub_id').value;
+  var vol_id = document.getElementById('vol_id').value;
+  var student_id = document.getElementById('student_id').value;
+  var tosend = {};
+  tosend.sub_id = sub_id;
+  tosend.vol_id = vol_id;
+  tosend.student_id = student_id;
+  axios.post('http://localhost:3000/class', {
+      data: tosend
+    })
+    .then(function (result) {
+      window.location.href = "../index.html"
+    })
+    .catch(function (err) {
+      console.log(err)
+    });
 }

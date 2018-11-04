@@ -19,5 +19,6 @@ router.use('/library/ret_book', require('./library/ret_book.js'));
 router.use('/library/show_library', require('./library/show_library.js'));
 router.use('/result', require('./result.js'));
 router.use('/showresult', require('./exam_result'));
+router.use('/class', require('./class.js'));
 
 module.exports = router;
