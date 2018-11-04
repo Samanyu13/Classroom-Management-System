@@ -29,4 +29,7 @@
 #to do
 to change:
   classes
-  view result (exam)
+
+#future work
+drop down exam id at add result
+show student name and subject name in view result

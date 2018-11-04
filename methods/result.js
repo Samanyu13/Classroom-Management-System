@@ -29,4 +29,14 @@ Result.getAllResults = () => new Promise((resolve, reject) => {
     });
 });
 
+Result.getExamResults = () => new Promise((resolve, reject) => {
+  models.sequelize.query(`select * from exams, results where exams.id = results.exam_id`)
+    .spread((stob) => {
+      resolve(stob);
+    })
+    .catch((err) => {
+      reject(err);
+    });
+});
+
 module.exports = Result;

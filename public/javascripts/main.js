@@ -32,6 +32,23 @@ function getVol(){
     });
 }
 
+function getExamResults() {
+  axios.get("http://localhost:3000/showresult", {
+    withCredentials:true
+  }).then(function(result) {
+    var data = result.data.classes
+    var text = "<table><tr><th>Student ID</th><th>Subject ID</th><th>Marks</th><th>Remarks</th></tr>"
+    for(var i = 0;i<data.length;i++){
+      text+="<tr><td>"+data[i].student_id+"</td><td>"+data[i].sub_id+"</td><td>"+data[i].marks+"</td><td>"+data[i].remarks+"</td></tr>";
+    }
+    text+="<table>"
+    var resultElement = document.getElementById('data')
+    resultElement.innerHTML = text
+  }).catch(function(err) {
+    console.log(err);    
+  });
+}
+
 function getLendedLibrary(){
     axios.get("http://localhost:3000/library/show_library/lended",{
         withCredentials:true
