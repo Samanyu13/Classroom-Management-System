@@ -37,9 +37,9 @@ function getExamResults() {
     withCredentials: true
   }).then(function (result) {
     var data = result.data.classes
-    var text = "<table><tr><th>Student ID</th><th>Subject ID</th><th>Marks</th><th>Remarks</th></tr>"
+    var text = "<table><tr><th>Student Name</th><th>Subject</th><th>Marks</th><th>Remarks</th></tr>"
     for (var i = 0; i < data.length; i++) {
-      text += "<tr><td>" + data[i].student_id + "</td><td>" + data[i].sub_id + "</td><td>" + data[i].marks + "</td><td>" + data[i].remarks + "</td></tr>";
+      text += "<tr><td>" + data[i].name + "</td><td>" + data[i].subject + "</td><td>" + data[i].marks + "</td><td>" + data[i].remarks + "</td></tr>";
     }
     text += "<table>"
     var resultElement = document.getElementById('data')
@@ -54,9 +54,9 @@ function getClasses() {
     withCredentials: true
   }).then(function (result) {
     var data = result.data.classes;
-    var text = "<table><tr><th>Student ID</th><th>Volunteer ID</th><th>Subject ID</th></tr>"
+    var text = "<table><tr><th>Student Name</th><th>Volunteer Name</th><th>Subject</th></tr>"
     for (var i = 0; i < data.length; i++) {
-      text += "<tr><td>" + data[i].student_id + "</td><td>" + data[i].vol_id + "</td><td>" + data[i].sub_id + "</td></tr>";
+      text += "<tr><td>" + data[i].studentname + "</td><td>" + data[i].volname + "</td><td>" + data[i].subject + "</td></tr>";
     }
     text += "<table>"
     var resultElement = document.getElementById('data')

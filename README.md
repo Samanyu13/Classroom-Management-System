@@ -28,5 +28,3 @@
   
 #future work
 drop down exam id at add result
-show student name and subject name in view result
-also student name, subject name and volunteer name view classes

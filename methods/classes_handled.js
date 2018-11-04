@@ -20,7 +20,7 @@ Classes.addClass = (info) => {
 };
 
 Classes.getAllClasses = () => new Promise((resolve, reject) => {
-  models.exams.sequelize.query(`select * from classes_handleds`)
+  models.exams.sequelize.query(`select s.name as studentname, v.name as volname, sub.name as subject from classes_handleds c, students s, subjects sub, volunteers v where c.sub_id = sub.id and s.id = c.student_id and v.id = c.vol_id`)
     .spread((exob) => {
       resolve(exob);
     })

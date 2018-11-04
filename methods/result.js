@@ -30,7 +30,7 @@ Result.getAllResults = () => new Promise((resolve, reject) => {
 });
 
 Result.getExamResults = () => new Promise((resolve, reject) => {
-  models.sequelize.query(`select * from exams, results where exams.id = results.exam_id`)
+  models.sequelize.query(`select results.marks as marks, results.remarks as remarks, students.name as name, subjects.name as subject from exams, results, students, subjects where exams.id = results.exam_id and subjects.id = exams.sub_id and students.id = exams.student_id`)
     .spread((stob) => {
       resolve(stob);
     })
