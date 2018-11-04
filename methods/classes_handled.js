@@ -48,10 +48,7 @@ Classes.findById = (id) => {
 
 };
 
-Classes.updateClass = (info, data) => new Promise((
-  resolve,
-  reject,
-) => {
+Classes.updateClass = (info, data) => new Promise((resolve, reject) => {
   models.exams.update(data, {
       where: {
         id: info.id

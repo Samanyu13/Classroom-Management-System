@@ -1,7 +1,7 @@
 const methods = {};
 
 methods.Exams = require('./exams');
-// methods.Classes = require('./classes');
+methods.Classes = require('./classes_handled');
 methods.Library = require('./library');
 methods.Student = require('./student');
 methods.Subject = require('./subject');
