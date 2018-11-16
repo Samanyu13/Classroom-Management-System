@@ -50,10 +50,10 @@ Classes.findById = (id) => {
 
 Classes.updateClass = (info, data) => new Promise((resolve, reject) => {
   models.exams.update(data, {
-      where: {
-        id: info.id
-      },
-    })
+    where: {
+      id: info.id
+    },
+  })
     .then((updated) => {
       if (updated > 0) {
         resolve(updated);
@@ -69,16 +69,16 @@ Classes.updateClass = (info, data) => new Promise((resolve, reject) => {
 
 Classes.deleteClass = info => new Promise((resolve, reject) => {
   models.exams.destroy({
-      where: {
-        id: info.id,
-      },
-    }).then((deleted) => {
-      if (deleted === 0) {
-        reject(new Error());
-      } else {
-        resolve(deleted);
-      }
-    })
+    where: {
+      id: info.id,
+    },
+  }).then((deleted) => {
+    if (deleted === 0) {
+      reject(new Error());
+    } else {
+      resolve(deleted);
+    }
+  })
     .catch((err) => {
       reject(err);
     });

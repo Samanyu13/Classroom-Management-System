@@ -53,10 +53,10 @@ Exams.updateExam = (info, data) => new Promise((
   reject,
 ) => {
   models.exams.update(data, {
-      where: {
-        id: info.id
-      },
-    })
+    where: {
+      id: info.id
+    },
+  })
     .then((updated) => {
       if (updated > 0) {
         resolve(updated);
@@ -72,16 +72,16 @@ Exams.updateExam = (info, data) => new Promise((
 
 Exams.deleteExam = info => new Promise((resolve, reject) => {
   models.exams.destroy({
-      where: {
-        id: info.id,
-      },
-    }).then((deleted) => {
-      if (deleted === 0) {
-        reject(new Error());
-      } else {
-        resolve(deleted);
-      }
-    })
+    where: {
+      id: info.id,
+    },
+  }).then((deleted) => {
+    if (deleted === 0) {
+      reject(new Error());
+    } else {
+      resolve(deleted);
+    }
+  })
     .catch((err) => {
       reject(err);
     });

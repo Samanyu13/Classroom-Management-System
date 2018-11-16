@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
 
   methods.Volunteer.addVolunteer(info)
     .then((model) => {
-        console.log(info)
+      console.log(info)
 
       res.json(model);
     })
@@ -45,20 +45,20 @@ router.put('/:id', (req, res) => {
 
   info.id = req.params.id; // key values for finding row
 
-  if (Object.prototype.hasOwnProperty.call(req.body, 'Name') && 
-      Object.prototype.hasOwnProperty.call(req.body, 'Contact') && 
-      Object.prototype.hasOwnProperty.call(req.body, 'Occupation')) {
-        data.name = req.body.Name;
-        data.contact = req.body.Contact;
-        data.occupation = req.body.Occupation;
+  if (Object.prototype.hasOwnProperty.call(req.body, 'Name') &&
+    Object.prototype.hasOwnProperty.call(req.body, 'Contact') &&
+    Object.prototype.hasOwnProperty.call(req.body, 'Occupation')) {
+    data.name = req.body.Name;
+    data.contact = req.body.Contact;
+    data.occupation = req.body.Occupation;
   }
 
   methods.Volunteer.updateVolunteer(info, data)
     .then((model) => {
-        res.status(200).json({
-          status: 'Updated Volunteer',
-          state: model[0],
-        });
+      res.status(200).json({
+        status: 'Updated Volunteer',
+        state: model[0],
+      });
     })
     .catch((err) => {
       res.send({

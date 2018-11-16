@@ -11,8 +11,8 @@ function addStudent() {
   tosend.Address = address;
   tosend.Contact = contact;
   axios.post('http://localhost:3000/student', {
-      data: tosend
-    })
+    data: tosend
+  })
     .then(function (result) {
       window.location.href = "index.html"
     })
@@ -30,8 +30,8 @@ function addVol() {
   tosend.Contact = contactno;
   tosend.Occupation = occup;
   axios.post('http://localhost:3000/volunteer', {
-      data: tosend
-    })
+    data: tosend
+  })
     .then(function (result) {
       window.location.href = "index.html"
     })
@@ -49,8 +49,8 @@ function addBook() {
   tosend.BookName = bookname;
   tosend.BookAuthor = bookauthor;
   axios.post('http://localhost:3000/library/add_book', {
-      data: tosend
-    })
+    data: tosend
+  })
     .then(function (result) {
       window.location.href = "../index.html"
     })
@@ -66,8 +66,8 @@ function lendBook() {
   tosend.BookNo = bookno;
   tosend.student_id = student_id;
   axios.post('http://localhost:3000/library/lend_book', {
-      data: tosend
-    })
+    data: tosend
+  })
     .then(function (result) {
       window.location.href = "../index.html";
     })
@@ -83,8 +83,8 @@ function retBook() {
   tosend.bookno = bookno;
   // tosend.studentid = studentid;
   axios.post('http://localhost:3000/library/ret_book', {
-      data: tosend
-    })
+    data: tosend
+  })
     .then(function (result) {
       window.location.href = "../index.html";
     })
@@ -102,8 +102,8 @@ function addExams() {
   tosend.Datee = Datee;
   tosend.StuID = StuID;
   axios.post('http://localhost:3000/exams', {
-      data: tosend
-    })
+    data: tosend
+  })
     .then(function (result) {
       window.location.href = "../index.html"
     })
@@ -121,8 +121,8 @@ function addResult() {
   tosend.marks = marks;
   tosend.remarks = remarks;
   axios.post('http://localhost:3000/result', {
-      data: tosend
-    })
+    data: tosend
+  })
     .then(function (result) {
       window.location.href = "../index.html"
     })
@@ -153,8 +153,8 @@ function addClass() {
   tosend.vol_id = vol_id;
   tosend.student_id = student_id;
   axios.post('http://localhost:3000/class', {
-      data: tosend
-    })
+    data: tosend
+  })
     .then(function (result) {
       window.location.href = "../index.html"
     })
